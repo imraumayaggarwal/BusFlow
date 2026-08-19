@@ -14,6 +14,10 @@ from app.core.dependencies import (
 
 from app.models.manager import Manager
 
+from app.schemas.departure import (
+    FinalizeDepartureResponse
+)
+
 from app.services.departure import (
     finalize_departure
 )
@@ -26,7 +30,8 @@ router = APIRouter(
 
 
 @router.post(
-    "/{poll_id}/finalize"
+    "/{poll_id}/finalize",
+    response_model=FinalizeDepartureResponse
 )
 def finalize(
     poll_id: str,
