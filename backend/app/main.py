@@ -8,6 +8,7 @@ from app.routers.bus import router as bus_router
 from app.routers.poll import router as poll_router
 from app.routers.assignment import router as assignment_router
 from app.routers.bus_selection import router as bus_selection_router
+from app.routers.departure import router as departure_router
 
 
 app = FastAPI(
@@ -25,6 +26,7 @@ app.include_router(bus_router)
 app.include_router(poll_router)
 app.include_router(assignment_router)
 app.include_router(bus_selection_router)
+app.include_router(departure_router)
 
 
 @app.get("/")
